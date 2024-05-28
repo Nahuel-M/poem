@@ -18,11 +18,11 @@ use crate::{
     Result,
 };
 
-pub(crate) type BoxBody = http_body_util::combinators::BoxBody<Bytes, IoError>;
+pub type BoxBody = http_body_util::combinators::BoxBody<Bytes, IoError>;
 
 /// A body object for requests and responses.
 #[derive(Default)]
-pub struct Body(pub(crate) BoxBody);
+pub struct Body(pub BoxBody);
 
 impl From<Body> for BoxBody {
     #[inline]
